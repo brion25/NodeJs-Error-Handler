@@ -3,6 +3,6 @@ var divide = require('./divide'),
 
 process.on('uncaughtException',error);
 
-setInterv(function(){
+setInterval(function(){
   console.log(divide(5/0));
 },1000);
