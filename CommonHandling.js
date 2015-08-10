@@ -1,7 +1,8 @@
-var divide = require('./divide');
+var divide = require('./divide'),
+    error = require('./errorHandler');
 
-process.on('uncaughtException',function(err){
-  console.log('Error!',err.message);
-});
+process.on('uncaughtException',error);
 
-divide(5,0);
+setInterv(function(){
+  console.log(divide(5/0));
+},1000);
